@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Crypto Trading Bots — Python Developer</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --bg: #0a0f1e;
+    --card: #111827;
+    --border: #1e2d45;
+    --accent: #38bdf8;
+    --green: #4ade80;
+    --yellow: #fbbf24;
+    --text: #e2e8f0;
+    --muted: #64748b;
+  }
+  body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.6; }
+
+  /* HERO */
+  .hero { padding: 80px 24px 60px; text-align: center; border-bottom: 1px solid var(--border); }
+  .hero-badge { display: inline-block; background: #0c1a2e; border: 1px solid var(--accent); color: var(--accent); font-size: 12px; padding: 4px 14px; border-radius: 20px; margin-bottom: 24px; letter-spacing: 1px; text-transform: uppercase; }
+  .hero h1 { font-size: clamp(28px, 5vw, 52px); font-weight: 700; margin-bottom: 16px; line-height: 1.2; }
+  .hero h1 span { color: var(--accent); }
+  .hero p { font-size: 18px; color: var(--muted); max-width: 600px; margin: 0 auto 36px; }
+  .hero-tags { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: 40px; }
+  .tag { background: #0c1a2e; border: 1px solid var(--border); color: #94a3b8; padding: 6px 14px; border-radius: 6px; font-size: 13px; }
+  .cta { display: inline-flex; align-items: center; gap: 8px; background: var(--accent); color: #0a0f1e; padding: 14px 28px; border-radius: 8px; font-weight: 700; font-size: 16px; text-decoration: none; transition: opacity .2s; }
+  .cta:hover { opacity: .85; }
+
+  /* SECTION */
+  .section { max-width: 1100px; margin: 0 auto; padding: 64px 24px; }
+  .section-title { font-size: 13px; color: var(--accent); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 12px; }
+  .section-h2 { font-size: clamp(22px, 3vw, 36px); font-weight: 700; margin-bottom: 40px; }
+
+  /* BOTS GRID */
+  .bots-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+  .bot-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 28px; position: relative; overflow: hidden; transition: border-color .2s; }
+  .bot-card:hover { border-color: var(--accent); }
+  .bot-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; }
+  .bot-card.blue::before { background: var(--accent); }
+  .bot-card.green::before { background: var(--green); }
+  .bot-card.yellow::before { background: var(--yellow); }
+  .bot-card.purple::before { background: #a78bfa; }
+  .bot-icon { font-size: 28px; margin-bottom: 14px; }
+  .bot-name { font-size: 18px; font-weight: 700; margin-bottom: 6px; }
+  .bot-type { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px; }
+  .bot-desc { font-size: 14px; color: #94a3b8; margin-bottom: 20px; line-height: 1.7; }
+  .bot-features { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .bot-features li { font-size: 13px; color: #94a3b8; padding-left: 20px; position: relative; }
+  .bot-features li::before { content: '✓'; position: absolute; left: 0; color: var(--green); font-weight: 700; }
+
+  /* WHAT I BUILD */
+  .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+  .service-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 24px; }
+  .service-icon { font-size: 24px; margin-bottom: 12px; }
+  .service-title { font-size: 15px; font-weight: 600; margin-bottom: 8px; }
+  .service-desc { font-size: 13px; color: var(--muted); }
+
+  /* STACK */
+  .stack-grid { display: flex; flex-wrap: wrap; gap: 12px; }
+  .stack-item { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 10px 18px; font-size: 14px; color: #94a3b8; }
+  .stack-item span { color: var(--accent); margin-right: 6px; }
+
+  /* METRICS */
+  .metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 16px; margin-bottom: 60px; }
+  .metric { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 24px; text-align: center; }
+  .metric-val { font-size: 32px; font-weight: 700; color: var(--accent); }
+  .metric-label { font-size: 13px; color: var(--muted); margin-top: 4px; }
+
+  /* CONTACT */
+  .contact { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 48px; text-align: center; }
+  .contact h2 { font-size: 28px; font-weight: 700; margin-bottom: 12px; }
+  .contact p { color: var(--muted); margin-bottom: 32px; font-size: 16px; }
+  .contact-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+  .btn-tg { display: inline-flex; align-items: center; gap: 8px; background: #2481cc; color: #fff; padding: 14px 28px; border-radius: 8px; font-weight: 600; text-decoration: none; font-size: 15px; }
+  .btn-secondary { display: inline-flex; align-items: center; gap: 8px; background: transparent; border: 1px solid var(--border); color: var(--text); padding: 14px 28px; border-radius: 8px; font-weight: 600; text-decoration: none; font-size: 15px; }
+
+  /* DIVIDER */
+  .divider { border: none; border-top: 1px solid var(--border); }
+
+  footer { text-align: center; padding: 32px; color: var(--muted); font-size: 13px; }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">⚡ Available for freelance</div>
+  <h1>Crypto Trading Bots<br><span>built to actually work</span></h1>
+  <p>Python-розробник. Будую торгових ботів з нуля — від стратегії до live-деплою на біржі.</p>
+  <div class="hero-tags">
+    <span class="tag">Python</span>
+    <span class="tag">ccxt</span>
+    <span class="tag">Binance / Bybit / OKX</span>
+    <span class="tag">Futures & Spot</span>
+    <span class="tag">Real-time Dashboard</span>
+    <span class="tag">Telegram alerts</span>
+  </div>
+  <a href="https://t.me/YOUR_USERNAME" class="cta">💬 Написати в Telegram</a>
+</div>
+
+<!-- METRICS -->
+<div class="section">
+  <div class="section-title">Досвід в цифрах</div>
+  <div class="section-h2">Що вже побудовано</div>
+  <div class="metrics">
+    <div class="metric"><div class="metric-val">5+</div><div class="metric-label">Live ботів на сервері</div></div>
+    <div class="metric"><div class="metric-val">3</div><div class="metric-label">Біржі (Binance, Bybit, OKX)</div></div>
+    <div class="metric"><div class="metric-val">150+</div><div class="metric-label">Торгових пар</div></div>
+    <div class="metric"><div class="metric-val">24/7</div><div class="metric-label">Автономна робота</div></div>
+  </div>
+
+  <!-- BOTS -->
+  <div class="section-title">Проєкти</div>
+  <div class="section-h2">Реальні боти в продакшні</div>
+  <div class="bots-grid">
+
+    <div class="bot-card blue">
+      <div class="bot-icon">⚡</div>
+      <div class="bot-name">NEXUS</div>
+      <div class="bot-type">Multi-Timeframe Momentum · Binance Futures</div>
+      <div class="bot-desc">Momentum-стратегія на ф'ючерсах. Асинхронні LIMIT-ордери, SL/TP виставляються прямо на біржі.</div>
+      <ul class="bot-features">
+        <li>Multi-timeframe сигнали (H1 + H5)</li>
+        <li>Trailing stop (a50_d10)</li>
+        <li>EMA Distance фільтр</li>
+        <li>Real-time веб-дашборд</li>
+        <li>Blacklist токсичних пар</li>
+      </ul>
+    </div>
+
+    <div class="bot-card green">
+      <div class="bot-icon">🦅</div>
+      <div class="bot-name">Apex Hunter</div>
+      <div class="bot-type">Власна стратегія · Bybit Futures</div>
+      <div class="bot-desc">Власна торгова стратегія з розширеним скануванням по 130+ парах з автоматичним управлінням ризиком.</div>
+      <ul class="bot-features">
+        <li>Сканування 130+ пар</li>
+        <li>Автоматичний риск-менеджмент</li>
+        <li>Аналітична панель</li>
+        <li>Telegram-алерти</li>
+      </ul>
+    </div>
+
+    <div class="bot-card yellow">
+      <div class="bot-icon">🌋</div>
+      <div class="bot-name">Magma v4</div>
+      <div class="bot-type">Власна стратегія · Live Trading</div>
+      <div class="bot-desc">Четверта версія стратегії з покращеним фільтром входів і динамічним управлінням позиціями.</div>
+      <ul class="bot-features">
+        <li>Динамічний розмір позиції</li>
+        <li>Фільтрація трендових ринків</li>
+        <li>Детальна статистика</li>
+      </ul>
+    </div>
+
+    <div class="bot-card purple">
+      <div class="bot-icon">◈</div>
+      <div class="bot-name">ECHO</div>
+      <div class="bot-type">Mean Reversion · Binance Futures · Paper</div>
+      <div class="bot-desc">Mean Reversion стратегія на основі Bollinger Bands + RSI + Bandwidth фільтр. Оптимізовані параметри через власний бектестер.</div>
+      <ul class="bot-features">
+        <li>BB(20,2) + RSI(14) + ATR</li>
+        <li>Reentry candle логіка</li>
+        <li>Власний бектестер + оптимізатор</li>
+        <li>Paper trading режим</li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- SERVICES -->
+<div class="section">
+  <div class="section-title">Послуги</div>
+  <div class="section-h2">Що я можу зробити для вас</div>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">🤖</div>
+      <div class="service-title">Торговий бот під ключ</div>
+      <div class="service-desc">Від ідеї стратегії до live-деплою на будь-якій біржі. Binance, Bybit, OKX, KuCoin.</div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">📊</div>
+      <div class="service-title">Бектест і оптимізація</div>
+      <div class="service-desc">Написання бектестера, перебір параметрів, аналіз результатів. Зрозумієте чи працює стратегія до запуску.</div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🖥️</div>
+      <div class="service-title">Дашборд і моніторинг</div>
+      <div class="service-desc">Веб-інтерфейс для керування ботом, перегляду позицій, статистики, PnL в реальному часі.</div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🔔</div>
+      <div class="service-title">Telegram-алерти</div>
+      <div class="service-desc">Повідомлення про відкриття/закриття позицій, аномальні рухи, помилки бота.</div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🔧</div>
+      <div class="service-title">Фікс існуючого бота</div>
+      <div class="service-desc">Якщо є бот але він не працює як треба — знайду і виправлю проблему.</div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">☁️</div>
+      <div class="service-title">Деплой на сервер</div>
+      <div class="service-desc">Налаштування VPS, systemd, nginx, SSL, автоматичний рестарт і моніторинг.</div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- STACK -->
+<div class="section">
+  <div class="section-title">Технології</div>
+  <div class="section-h2">Стек</div>
+  <div class="stack-grid">
+    <div class="stack-item"><span>⚙️</span>Python 3.12</div>
+    <div class="stack-item"><span>📡</span>ccxt</div>
+    <div class="stack-item"><span>🌐</span>FastAPI / Flask</div>
+    <div class="stack-item"><span>🗄️</span>SQLite / PostgreSQL</div>
+    <div class="stack-item"><span>⚡</span>WebSocket</div>
+    <div class="stack-item"><span>📊</span>pandas / numpy</div>
+    <div class="stack-item"><span>🔁</span>asyncio</div>
+    <div class="stack-item"><span>🤖</span>Telegram Bot API</div>
+    <div class="stack-item"><span>🐳</span>Docker</div>
+    <div class="stack-item"><span>🔧</span>nginx / systemd</div>
+    <div class="stack-item"><span>📈</span>TradingView Lightweight Charts</div>
+    <div class="stack-item"><span>🔐</span>SSL / Auth</div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- CONTACT -->
+<div class="section">
+  <div class="contact">
+    <h2>Готові обговорити проєкт?</h2>
+    <p>Опишіть завдання — відповім протягом кількох годин.<br>Перша консультація безкоштовна.</p>
+    <div class="contact-btns">
+      <a href="https://t.me/YOUR_USERNAME" class="btn-tg">✈️ Написати в Telegram</a>
+      <a href="mailto:YOUR@EMAIL.COM" class="btn-secondary">✉️ Email</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  © 2026 · Crypto Trading Bot Developer · Python · ccxt · Binance / Bybit / OKX
+</footer>
+
+</body>
+</html>
