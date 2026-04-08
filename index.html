@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Crypto Trading Bots — Python Developer</title>
+<title>NEXUS — Python & AI Trading Systems</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   :root {
@@ -15,6 +15,7 @@
     --yellow: #fbbf24;
     --text: #e2e8f0;
     --muted: #64748b;
+    --course-bg: linear-gradient(135deg, #0c1a2e 0%, #1e2d45 100%);
   }
   body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.6; }
 
@@ -26,13 +27,24 @@
   .hero p { font-size: 18px; color: var(--muted); max-width: 600px; margin: 0 auto 36px; }
   .hero-tags { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: 40px; }
   .tag { background: #0c1a2e; border: 1px solid var(--border); color: #94a3b8; padding: 6px 14px; border-radius: 6px; font-size: 13px; }
+  .cta-group { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
   .cta { display: inline-flex; align-items: center; gap: 8px; background: var(--accent); color: #0a0f1e; padding: 14px 28px; border-radius: 8px; font-weight: 700; font-size: 16px; text-decoration: none; transition: opacity .2s; }
+  .cta.secondary { background: transparent; border: 1px solid var(--accent); color: var(--accent); }
   .cta:hover { opacity: .85; }
 
   /* SECTION */
   .section { max-width: 1100px; margin: 0 auto; padding: 64px 24px; }
   .section-title { font-size: 13px; color: var(--accent); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 12px; }
   .section-h2 { font-size: clamp(22px, 3vw, 36px); font-weight: 700; margin-bottom: 40px; }
+
+  /* COURSE CARD (NEW) */
+  .course-section { background: var(--course-bg); border: 1px solid var(--accent); border-radius: 16px; padding: 40px; margin-bottom: 60px; display: flex; flex-wrap: wrap; gap: 30px; align-items: center; }
+  .course-info { flex: 2; min-width: 300px; }
+  .course-info h3 { font-size: 28px; margin-bottom: 16px; color: var(--yellow); }
+  .course-price { font-size: 24px; font-weight: 700; color: var(--text); margin: 20px 0; }
+  .course-features { list-style: none; margin-bottom: 24px; }
+  .course-features li { margin-bottom: 8px; font-size: 15px; display: flex; align-items: center; gap: 10px; }
+  .course-features li::before { content: '🚀'; }
 
   /* BOTS GRID */
   .bots-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
@@ -85,87 +97,86 @@
 </head>
 <body>
 
-<!-- HERO -->
 <div class="hero">
-  <div class="hero-badge">⚡ Available for freelance</div>
-  <h1>Crypto Trading Bots<br><span>built to actually work</span></h1>
-  <p>Python-розробник. Будую торгових ботів з нуля — від стратегії до live-деплою на біржі.</p>
+  <div class="hero-badge">⚡ Доступен для новых проектов и обучения</div>
+  <h1>Crypto & AI Development<br><span>системы, которые работают</span></h1>
+  <p>Python-разработчик. Создаю автономных торговых ботов с применением AI: от архитектуры до деплоя в облаке.</p>
   <div class="hero-tags">
-    <span class="tag">Python</span>
-    <span class="tag">ccxt</span>
-    <span class="tag">Binance / Bybit / OKX</span>
-    <span class="tag">Futures & Spot</span>
-    <span class="tag">Real-time Dashboard</span>
-    <span class="tag">Telegram alerts</span>
+    <span class="tag">Python 3.12</span>
+    <span class="tag">Claude Code / AI</span>
+    <span class="tag">ccxt / Binance / Bybit</span>
+    <span class="tag">Autonomous Systems</span>
+    <span class="tag">Docker / VPS</span>
   </div>
-  <a href="https://t.me/Alright_thanks" class="cta">💬 Написати в Telegram</a>
+  <div class="cta-group">
+    <a href="https://t.me/NexusAlgoTradeBot" class="cta">🤖 Запустить Nexus Bot</a>
+    <a href="https://t.me/nexus_algo_ru" class="cta secondary">📡 Наш канал</a>
+  </div>
 </div>
 
-<!-- METRICS -->
 <div class="section">
-  <div class="section-title">Досвід в цифрах</div>
-  <div class="section-h2">Що вже побудовано</div>
+  <div class="section-title">Опыт в цифрах</div>
+  <div class="section-h2">Реальные показатели</div>
   <div class="metrics">
-    <div class="metric"><div class="metric-val">5+</div><div class="metric-label">Live ботів на сервері</div></div>
-    <div class="metric"><div class="metric-val">3</div><div class="metric-label">Біржі (Binance, Bybit, OKX)</div></div>
-    <div class="metric"><div class="metric-val">150+</div><div class="metric-label">Торгових пар</div></div>
-    <div class="metric"><div class="metric-val">24/7</div><div class="metric-label">Автономна робота</div></div>
+    <div class="metric"><div class="metric-val">60%</div><div class="metric-label">Средний Win Rate</div></div>
+    <div class="metric"><div class="metric-val">5+</div><div class="metric-label">Ботов в Live</div></div>
+    <div class="metric"><div class="metric-val">150+</div><div class="metric-label">Торговых пар</div></div>
+    <div class="metric"><div class="metric-val">24/7</div><div class="metric-label">Автономная работа</div></div>
   </div>
 
-  <!-- BOTS -->
-  <div class="section-title">Проєкти</div>
-  <div class="section-h2">Реальні боти в продакшні</div>
+  <div class="section-title">Обучение</div>
+  <div class="course-section">
+    <div class="course-info">
+      <h3>Курс: Конструктор автономных систем</h3>
+      <p>Обучаю создавать торговые инструменты с нуля, используя мощь Python и AI-помощников (Claude Code). Вы не просто учите код — вы учитесь управлять цифровыми активами.</p>
+      <ul class="course-features">
+        <li>10 модулей: от основ Python до деплоя на VPS</li>
+        <li>Работа с Claude Code для ускорения разработки</li>
+        <li>Готовые блоки конструктора для ваших стратегий</li>
+        <li>Доступ в закрытое комьюнити трейдеров</li>
+      </ul>
+      <div class="course-price">Стоимость курса: от €199</div>
+      <a href="https://t.me/Alright_thanks" class="cta" style="background: var(--yellow);">Узнать программу и записаться</a>
+    </div>
+  </div>
+
+  <div class="section-title">Проекты</div>
+  <div class="section-h2">Реальные боты в продакшне</div>
   <div class="bots-grid">
 
     <div class="bot-card blue">
       <div class="bot-icon">⚡</div>
       <div class="bot-name">NEXUS</div>
-      <div class="bot-type">Multi-Timeframe Momentum · Binance Futures</div>
-      <div class="bot-desc">Momentum-стратегія на ф'ючерсах. Асинхронні LIMIT-ордери, SL/TP виставляються прямо на біржі.</div>
+      <div class="bot-type">Multi-Timeframe Momentum · Binance</div>
+      <div class="bot-desc">Моя флагманская стратегия. Асинхронные LIMIT-ордера, SL/TP прямо на бирже.</div>
       <ul class="bot-features">
-        <li>Multi-timeframe сигнали (H1 + H5)</li>
+        <li>Сигналы H1 + H5</li>
         <li>Trailing stop (a50_d10)</li>
-        <li>EMA Distance фільтр</li>
-        <li>Real-time веб-дашборд</li>
-        <li>Blacklist токсичних пар</li>
-      </ul>
-    </div>
-
-    <div class="bot-card green">
-      <div class="bot-icon">🦅</div>
-      <div class="bot-name">Apex Hunter</div>
-      <div class="bot-type">Власна стратегія · Bybit Futures</div>
-      <div class="bot-desc">Власна торгова стратегія з розширеним скануванням по 130+ парах з автоматичним управлінням ризиком.</div>
-      <ul class="bot-features">
-        <li>Сканування 130+ пар</li>
-        <li>Автоматичний риск-менеджмент</li>
-        <li>Аналітична панель</li>
-        <li>Telegram-алерти</li>
+        <li>Real-time дашборд</li>
       </ul>
     </div>
 
     <div class="bot-card yellow">
       <div class="bot-icon">🌋</div>
       <div class="bot-name">Magma v4</div>
-      <div class="bot-type">Власна стратегія · Live Trading</div>
-      <div class="bot-desc">Четверта версія стратегії з покращеним фільтром входів і динамічним управлінням позиціями.</div>
+      <div class="bot-type">Trend Following · Live Trading</div>
+      <div class="bot-desc">Улучшенный фильтр входов и динамическое управление объемом позиций.</div>
       <ul class="bot-features">
-        <li>Динамічний розмір позиції</li>
-        <li>Фільтрація трендових ринків</li>
-        <li>Детальна статистика</li>
+        <li>Динамический размер позы</li>
+        <li>Фильтр трендовых рынков</li>
+        <li>Детальная статистика</li>
       </ul>
     </div>
 
     <div class="bot-card purple">
       <div class="bot-icon">◈</div>
       <div class="bot-name">ECHO</div>
-      <div class="bot-type">Mean Reversion · Binance Futures · Paper</div>
-      <div class="bot-desc">Mean Reversion стратегія на основі Bollinger Bands + RSI + Bandwidth фільтр. Оптимізовані параметри через власний бектестер.</div>
+      <div class="bot-type">Mean Reversion · Paper / Testnet</div>
+      <div class="bot-desc">Основана на Bollinger Bands + RSI. Оптимизирована через собственный бектестер.</div>
       <ul class="bot-features">
-        <li>BB(20,2) + RSI(14) + ATR</li>
-        <li>Reentry candle логіка</li>
-        <li>Власний бектестер + оптимізатор</li>
-        <li>Paper trading режим</li>
+        <li>BB(20,2) + RSI(14)</li>
+        <li>Собственный бектестер</li>
+        <li>Режим Paper trading</li>
       </ul>
     </div>
 
@@ -174,82 +185,65 @@
 
 <hr class="divider">
 
-<!-- SERVICES -->
 <div class="section">
-  <div class="section-title">Послуги</div>
-  <div class="section-h2">Що я можу зробити для вас</div>
+  <div class="section-title">Услуги</div>
+  <div class="section-h2">Что я могу сделать для вас</div>
   <div class="services-grid">
     <div class="service-card">
       <div class="service-icon">🤖</div>
-      <div class="service-title">Торговий бот під ключ</div>
-      <div class="service-desc">Від ідеї стратегії до live-деплою на будь-якій біржі. Binance, Bybit, OKX, KuCoin.</div>
+      <div class="service-title">Бот под ключ</div>
+      <div class="service-desc">От вашей идеи до деплоя на бирже. Binance, Bybit, OKX.</div>
     </div>
     <div class="service-card">
       <div class="service-icon">📊</div>
-      <div class="service-title">Бектест і оптимізація</div>
-      <div class="service-desc">Написання бектестера, перебір параметрів, аналіз результатів. Зрозумієте чи працює стратегія до запуску.</div>
+      <div class="service-title">Бектест стратегий</div>
+      <div class="service-desc">Проверка вашей логики на исторических данных до запуска.</div>
     </div>
     <div class="service-card">
       <div class="service-icon">🖥️</div>
-      <div class="service-title">Дашборд і моніторинг</div>
-      <div class="service-desc">Веб-інтерфейс для керування ботом, перегляду позицій, статистики, PnL в реальному часі.</div>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">🔔</div>
-      <div class="service-title">Telegram-алерти</div>
-      <div class="service-desc">Повідомлення про відкриття/закриття позицій, аномальні рухи, помилки бота.</div>
+      <div class="service-title">Дашборды и Мониторинг</div>
+      <div class="service-desc">Веб-интерфейс для управления ботом и просмотра PnL.</div>
     </div>
     <div class="service-card">
       <div class="service-icon">🔧</div>
-      <div class="service-title">Фікс існуючого бота</div>
-      <div class="service-desc">Якщо є бот але він не працює як треба — знайду і виправлю проблему.</div>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">☁️</div>
-      <div class="service-title">Деплой на сервер</div>
-      <div class="service-desc">Налаштування VPS, systemd, nginx, SSL, автоматичний рестарт і моніторинг.</div>
+      <div class="service-title">Оптимизация и фикс</div>
+      <div class="service-desc">Исправление ошибок и ускорение работы ваших скриптов.</div>
     </div>
   </div>
 </div>
 
 <hr class="divider">
 
-<!-- STACK -->
 <div class="section">
-  <div class="section-title">Технології</div>
-  <div class="section-h2">Стек</div>
+  <div class="section-title">Технологии</div>
+  <div class="section-h2">Мой Стек</div>
   <div class="stack-grid">
     <div class="stack-item"><span>⚙️</span>Python 3.12</div>
+    <div class="stack-item"><span>🤖</span>Claude Code / AI Agents</div>
     <div class="stack-item"><span>📡</span>ccxt</div>
     <div class="stack-item"><span>🌐</span>FastAPI / Flask</div>
-    <div class="stack-item"><span>🗄️</span>SQLite / PostgreSQL</div>
-    <div class="stack-item"><span>⚡</span>WebSocket</div>
-    <div class="stack-item"><span>📊</span>pandas / numpy</div>
-    <div class="stack-item"><span>🔁</span>asyncio</div>
-    <div class="stack-item"><span>🤖</span>Telegram Bot API</div>
+    <div class="stack-item"><span>🗄️</span>PostgreSQL / Redis</div>
     <div class="stack-item"><span>🐳</span>Docker</div>
-    <div class="stack-item"><span>🔧</span>nginx / systemd</div>
-    <div class="stack-item"><span>📈</span>TradingView Lightweight Charts</div>
-    <div class="stack-item"><span>🔐</span>SSL / Auth</div>
+    <div class="stack-item"><span>⚡</span>WebSocket / Asyncio</div>
+    <div class="stack-item"><span>🔧</span>Linux / systemd</div>
   </div>
 </div>
 
 <hr class="divider">
 
-<!-- CONTACT -->
 <div class="section">
   <div class="contact">
-    <h2>Готові обговорити проєкт?</h2>
-    <p>Опишіть завдання — відповім протягом кількох годин.<br>Перша консультація безкоштовна.</p>
+    <h2>Готовы автоматизировать торговлю?</h2>
+    <p>Нужен бот под ключ или хотите научиться создавать их самостоятельно? Напишите мне.</p>
     <div class="contact-btns">
-      <a href="https://t.me/Alright_thanks" class="btn-tg">✈️ Написати в Telegram</a>
+      <a href="https://t.me/Alright_thanks" class="btn-tg">✈️ Написать в Telegram</a>
       <a href="mailto:sspoisk@gmail.com" class="btn-secondary">✉️ Email</a>
     </div>
   </div>
 </div>
 
 <footer>
-  © 2026 · Crypto Trading Bot Developer · Python · ccxt · Binance / Bybit / OKX
+  © 2026 · NEXUS Crypto Systems · Python · AI · ccxt
 </footer>
 
 </body>
