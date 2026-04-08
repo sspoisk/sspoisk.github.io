@@ -46,11 +46,22 @@
   /* COURSE CARD */
   .course-section { background: var(--course-bg); border: 1px solid var(--accent); border-radius: 16px; padding: 40px; margin-bottom: 60px; }
   .course-info h3 { font-size: 28px; margin-bottom: 16px; color: var(--yellow); }
+  .course-result { font-size: 20px; font-weight: 700; color: var(--text); margin-bottom: 16px; padding: 16px 20px; background: rgba(56,189,248,0.08); border-left: 3px solid var(--accent); border-radius: 4px; }
   .course-info p { margin-bottom: 24px; font-size: 17px; color: #cbd5e1; }
-  .course-features { list-style: none; margin-bottom: 32px; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; }
-  .course-features li { font-size: 15px; display: flex; align-items: flex-start; gap: 10px; }
-  .course-features li::before { content: '🚀'; flex-shrink: 0; }
-  .course-price { font-size: 24px; font-weight: 700; color: var(--text); margin-bottom: 24px; display: block; }
+  .course-modules { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin-bottom: 32px; }
+  .course-module { background: rgba(255,255,255,0.04); border: 1px solid var(--border); border-radius: 8px; padding: 14px 16px; }
+  .course-module-num { font-size: 11px; color: var(--accent); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 4px; }
+  .course-module-name { font-size: 14px; font-weight: 600; color: var(--text); }
+  .course-module-desc { font-size: 12px; color: var(--muted); margin-top: 4px; }
+  .course-plans { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 32px; }
+  .course-plan { background: rgba(255,255,255,0.04); border: 1px solid var(--border); border-radius: 12px; padding: 24px; text-align: center; }
+  .course-plan.featured { border-color: var(--accent); background: rgba(56,189,248,0.06); }
+  .course-plan-name { font-size: 13px; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+  .course-plan-price { font-size: 32px; font-weight: 700; color: var(--yellow); margin-bottom: 8px; }
+  .course-plan-desc { font-size: 13px; color: #94a3b8; margin-bottom: 16px; }
+  .course-plan-features { list-style: none; text-align: left; display: flex; flex-direction: column; gap: 6px; }
+  .course-plan-features li { font-size: 13px; color: #94a3b8; padding-left: 18px; position: relative; }
+  .course-plan-features li::before { content: '✓'; position: absolute; left: 0; color: var(--green); font-weight: 700; }
 
   /* BOTS GRID */
   .bots-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
@@ -96,8 +107,8 @@
 
 <div class="hero">
   <div class="hero-badge">⚡ Доступен для новых проектов и обучения</div>
-  <h1>Crypto & AI Development<br><span>автономные системы будущего</span></h1>
-  <p>Проектирую и создаю торговых ботов нового поколения. Вместо ручного кодинга — управление через AI. Вместо хаоса — строгая математика и автономность.</p>
+  <h1>Сделай своего<br><span>крипто-бота с нуля</span></h1>
+  <p>Даже если ты никогда не писал код. Курс по созданию торговых ботов с помощью AI — от идеи до запуска на реальном рынке.</p>
   <div class="hero-tags">
     <span class="tag">Python 3.12</span>
     <span class="tag">Claude Code / AI</span>
@@ -120,18 +131,91 @@
   </div>
 
   <div class="section-title">Обучение</div>
+  <div class="section-h2">Курс: Инженер автономных систем</div>
   <div class="course-section">
     <div class="course-info">
-      <h3>Курс: Инженер автономных систем</h3>
-      <p>Я научу вас создавать профессиональные торговые инструменты, не погружаясь в рутинное написание кода. Мы используем мощь <strong>Claude Code</strong>: вы ставите задачу — нейросеть реализует техническую часть под вашим контролем.</p>
-      <ul class="course-features">
-        <li><strong>Сборка из блоков:</strong> Соединяйте готовые модули в рабочую систему, как конструктор.</li>
-        <li><strong>Управление через AI:</strong> Делегируйте написание скриптов нейросетям без ошибок.</li>
-        <li><strong>Логика, а не синтаксис:</strong> Фокус на прибыльных алгоритмах, а не на поиске запятых.</li>
-        <li><strong>Деплой на сервер:</strong> Настройка автономного узла, работающего на вас 24/7.</li>
-      </ul>
-      <span class="course-price">Инвестиция в навык: от $199</span>
-      <a href="https://t.me/Alright_thanks" class="cta" style="background: var(--yellow); color: #0a0f1e;">Узнать программу в Telegram</a>
+      <div class="course-result">За 30 дней ты запустишь своего торгового бота на реальном рынке — даже если никогда не писал код</div>
+      <p>Никакой рутины. Вместо ручного кодинга — управление через <strong>Claude Code</strong>: ты ставишь задачу, AI пишет код под твоим контролем. Ты учишься логике стратегий, а не синтаксису.</p>
+
+      <div class="course-modules">
+        <div class="course-module">
+          <div class="course-module-num">Модуль 1</div>
+          <div class="course-module-name">Основы и подготовка</div>
+          <div class="course-module-desc">Claude Code, Binance API, тестнет, безопасность</div>
+        </div>
+        <div class="course-module">
+          <div class="course-module-num">Модуль 2</div>
+          <div class="course-module-name">Python для крипто</div>
+          <div class="course-module-desc">Переменные, циклы, работа с API и JSON</div>
+        </div>
+        <div class="course-module">
+          <div class="course-module-num">Модуль 3</div>
+          <div class="course-module-name">Binance API глубже</div>
+          <div class="course-module-desc">Свечи, баланс, ордеры, стоп-лоссы</div>
+        </div>
+        <div class="course-module">
+          <div class="course-module-num">Модуль 4</div>
+          <div class="course-module-name">Торговые стратегии</div>
+          <div class="course-module-desc">MA, RSI, Bollinger Bands, риск-менеджмент</div>
+        </div>
+        <div class="course-module">
+          <div class="course-module-num">Модуль 5</div>
+          <div class="course-module-name">Работа с Claude Code</div>
+          <div class="course-module-desc">Правильные промпты, отладка с AI, генерация кода</div>
+        </div>
+        <div class="course-module">
+          <div class="course-module-num">Модуль 6</div>
+          <div class="course-module-name">Создание первого бота</div>
+          <div class="course-module-desc">Архитектура, логика, первый запуск на тестнете</div>
+        </div>
+        <div class="course-module">
+          <div class="course-module-num">Модуль 7</div>
+          <div class="course-module-name">Оптимизация</div>
+          <div class="course-module-desc">Бэктест, обработка ошибок, Telegram-уведомления</div>
+        </div>
+        <div class="course-module">
+          <div class="course-module-num">Модуль 8</div>
+          <div class="course-module-name">Деплой на сервер</div>
+          <div class="course-module-desc">VPS, автозапуск, бот работает 24/7 без тебя</div>
+        </div>
+      </div>
+
+      <div class="course-plans">
+        <div class="course-plan">
+          <div class="course-plan-name">Мини-курс</div>
+          <div class="course-plan-price">€59</div>
+          <div class="course-plan-desc">Модули 1–6 · Первый рабочий бот</div>
+          <ul class="course-plan-features">
+            <li>Текст + картинки</li>
+            <li>Шаблоны кода</li>
+            <li>Запуск на тестнете</li>
+          </ul>
+        </div>
+        <div class="course-plan featured">
+          <div class="course-plan-name">⭐ Полный курс</div>
+          <div class="course-plan-price">€129</div>
+          <div class="course-plan-desc">Все 8 модулей · Бот на реальном сервере</div>
+          <ul class="course-plan-features">
+            <li>Текст + картинки</li>
+            <li>Шаблоны кода</li>
+            <li>Деплой на VPS</li>
+            <li>Бэктест и оптимизация</li>
+          </ul>
+        </div>
+        <div class="course-plan">
+          <div class="course-plan-name">Полный + поддержка</div>
+          <div class="course-plan-price">€179</div>
+          <div class="course-plan-desc">Полный курс + 1 месяц в Telegram</div>
+          <ul class="course-plan-features">
+            <li>Всё из полного курса</li>
+            <li>Личные ответы на вопросы</li>
+            <li>Ревью твоего кода</li>
+            <li>Помощь с запуском</li>
+          </ul>
+        </div>
+      </div>
+
+      <a href="https://t.me/Alright_thanks" class="cta" style="background: var(--yellow); color: #0a0f1e; font-size: 17px; padding: 16px 36px;">Записаться в Telegram</a>
     </div>
   </div>
 
