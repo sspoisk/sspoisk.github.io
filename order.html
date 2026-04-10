@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Бот под ключ — NEXUS</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.order-hero { padding: 64px 32px 48px; max-width: 800px; margin: 0 auto; }
+.order-hero h1 { font-size: clamp(28px, 4vw, 46px); font-weight: 700; line-height: 1.2; margin-bottom: 16px; }
+.order-hero h1 span { color: var(--accent); }
+.order-hero p { font-size: 17px; color: #94a3b8; max-width: 620px; margin-bottom: 32px; line-height: 1.7; }
+
+.steps-wrap { max-width: 800px; margin: 0 auto; padding: 0 32px 48px; }
+.steps-wrap h2 { font-size: 24px; font-weight: 700; margin-bottom: 8px; }
+.steps-wrap .sub { font-size: 15px; color: var(--muted); margin-bottom: 32px; }
+
+.step { display: flex; gap: 20px; align-items: flex-start; padding: 20px 0; border-bottom: 1px solid var(--border); }
+.step:last-child { border-bottom: none; }
+.step-num { background: var(--card); border: 1px solid var(--border); border-radius: 8px; min-width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 700; color: var(--accent); flex-shrink: 0; }
+.step-body { flex: 1; }
+.step-title { font-size: 17px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+.step-desc { font-size: 14px; color: var(--muted); line-height: 1.6; margin-bottom: 8px; }
+.step-price { display: inline-block; background: rgba(251,191,36,0.1); border: 1px solid rgba(251,191,36,0.3); color: var(--yellow); font-size: 14px; font-weight: 700; padding: 3px 12px; border-radius: 20px; }
+.step-price.free { background: rgba(74,222,128,0.1); border-color: rgba(74,222,128,0.3); color: var(--green); }
+
+.total-box { background: var(--card); border: 1px solid var(--accent); border-radius: 16px; padding: 32px; margin: 32px 0; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
+.total-box .total-label { font-size: 14px; color: var(--muted); margin-bottom: 4px; }
+.total-box .total-val { font-size: 42px; font-weight: 700; color: var(--yellow); line-height: 1; }
+.total-box .total-sub { font-size: 13px; color: var(--muted); margin-top: 6px; }
+
+.warn-note { background: rgba(251,191,36,0.06); border: 1px solid rgba(251,191,36,0.25); border-radius: 10px; padding: 20px 24px; margin: 24px 0; font-size: 15px; color: #cbd5e1; line-height: 1.7; }
+.warn-note strong { color: var(--text); }
+
+.faq { max-width: 800px; margin: 0 auto; padding: 0 32px 64px; }
+.faq h2 { font-size: 22px; font-weight: 700; margin-bottom: 24px; }
+.faq-item { border-bottom: 1px solid var(--border); padding: 18px 0; }
+.faq-q { font-size: 16px; font-weight: 600; color: var(--text); margin-bottom: 8px; }
+.faq-a { font-size: 14px; color: var(--muted); line-height: 1.7; }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="nav-logo">⚡ NEXUS КУРС</a>
+  <a href="intro.html" class="nav-link">Введение</a>
+  <a href="https://157.180.45.96:464/#pricing" class="nav-link">Курс</a>
+  <a href="https://t.me/Alright_thanks" class="nav-link">Telegram</a>
+</nav>
+
+<div class="order-hero">
+  <div class="hero-badge">Под ключ · Без обучения · Готовый результат</div>
+  <h1>Бот по вашей стратегии —<br><span>под ключ</span></h1>
+  <p>
+    Не хочешь разбираться сам — мы берём задачу полностью на себя.
+    Ты объясняешь логику торговли, мы строим и запускаем систему.
+    Работает на твоём счёте, под твоим контролем.
+  </p>
+  <a href="https://t.me/Alright_thanks" class="btn btn-primary" style="font-size:16px;padding:14px 32px;">Обсудить задачу в Telegram</a>
+</div>
+
+<div class="divider" style="max-width:800px;margin:0 auto;padding:0 32px;border-top:1px solid var(--border);"></div>
+
+<!-- ЭТАПЫ -->
+<div class="steps-wrap">
+  <h2>Из чего состоит работа</h2>
+  <p class="sub">Платишь только за те этапы, которые нужны. Каждый этап — отдельно.</p>
+
+  <div class="step">
+    <div class="step-num">1</div>
+    <div class="step-body">
+      <div class="step-title">Консультация и оценка стратегии</div>
+      <div class="step-desc">Разбираем твою торговую идею. Проверяем есть ли у неё математическое основание — до того как тратить деньги на разработку. Честный ответ: рабочая или нет.</div>
+      <span class="step-price">$50</span>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">2</div>
+    <div class="step-body">
+      <div class="step-title">Бэктест стратегии на истории</div>
+      <div class="step-desc">Прогоняем логику на реальных данных за 3–6 месяцев. Получаешь отчёт: Win Rate, просадка, прибыль, количество сделок. Видишь результат до запуска.</div>
+      <span class="step-price">$100</span>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">3</div>
+    <div class="step-body">
+      <div class="step-title">Разработка бота в бумажном режиме</div>
+      <div class="step-desc">Пишем полноценного бота: сигналы, входы, стоп-лоссы, логирование. Запускаем на Paper Trading — торгует на реальном рынке, но без реальных денег.</div>
+      <span class="step-price">$150</span>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">4</div>
+    <div class="step-body">
+      <div class="step-title">Тестирование на Binance Testnet</div>
+      <div class="step-desc">Переводим на testnet Binance Futures — реальная биржевая инфраструктура, виртуальные деньги. Отлаживаем исполнение ордеров, скорость, обработку ошибок.</div>
+      <span class="step-price">$80</span>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">5</div>
+    <div class="step-body">
+      <div class="step-title">Подключение к реальному счёту</div>
+      <div class="step-desc">Настраиваем API-ключи, переводим на боевой режим. Первый запуск под наблюдением — убеждаемся что всё работает корректно с реальными ордерами.</div>
+      <span class="step-price">$100</span>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">6</div>
+    <div class="step-body">
+      <div class="step-title">Сервер + автономная работа 24/7</div>
+      <div class="step-desc">Разворачиваем бота на VPS-сервере. Настраиваем автозапуск, мониторинг, алерты в Telegram. Бот работает без твоего участия.</div>
+      <span class="step-price">$80</span>
+    </div>
+  </div>
+
+  <!-- ИТОГО -->
+  <div class="total-box">
+    <div>
+      <div class="total-label">Полный цикл — все 6 этапов</div>
+      <div class="total-val">$560</div>
+      <div class="total-sub">или отдельные этапы — от $50</div>
+    </div>
+    <a href="https://t.me/Alright_thanks" class="btn btn-yellow" style="font-size:16px;padding:14px 32px;">Написать в Telegram</a>
+  </div>
+
+  <div class="warn-note">
+    <strong>Важно:</strong> Этапы 1 и 2 (консультация + бэктест) выполняются всегда первыми.
+    Если стратегия не проходит проверку — мы говорим об этом честно, до того как ты потратил $400+.
+    Доработка стратегии — отдельно, по договорённости.
+  </div>
+</div>
+
+<!-- FAQ -->
+<div class="faq">
+  <h2>Частые вопросы</h2>
+
+  <div class="faq-item">
+    <div class="faq-q">У меня нет готовой стратегии. Можно ли заказать бота?</div>
+    <div class="faq-a">Да. Начнём с консультации — расскажешь как видишь торговлю, мы предложим варианты. Разработка стратегии с нуля — по отдельной договорённости.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">Кто будет владеть кодом бота?</div>
+    <div class="faq-a">Ты. Весь код передаётся тебе, размещается на твоём сервере, под твоими API-ключами. Мы не имеем доступа к твоим деньгам.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">Сколько времени занимает разработка?</div>
+    <div class="faq-a">Полный цикл — 2–3 недели. Зависит от сложности стратегии и скорости обратной связи с твоей стороны.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">Гарантируете ли вы прибыль?</div>
+    <div class="faq-a">Нет. Никто честно не гарантирует прибыль в трейдинге. Мы гарантируем что бот будет работать строго по согласованной логике — без багов и без потери контроля над рисками.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">Что если что-то сломается после запуска?</div>
+    <div class="faq-a">Первые 14 дней после запуска — поддержка включена. Если что-то пошло не так из-за нашего кода — чиним бесплатно.</div>
+  </div>
+</div>
+
+<footer>© 2026 · NEXUS · Торговые системы под ключ</footer>
+
+</body>
+</html>
