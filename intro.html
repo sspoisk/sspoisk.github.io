@@ -309,11 +309,39 @@
         <span style="color:var(--red);font-size:16px;margin-top:3px;">✗</span>
         <span style="font-size:15px;color:#94a3b8;">Бот в бэктесте показывал WR 70%. На живом рынке — 41%. Причина нашлась только через месяц</span>
       </li>
+      <li style="display:flex;gap:12px;align-items:flex-start;">
+        <span style="color:var(--red);font-size:16px;margin-top:3px;">✗</span>
+        <span style="font-size:15px;color:#94a3b8;">Бот показывал прибыль +$6. Биржа показывала -$54 по той же паре. Расхождение обнаружили случайно — через несколько дней</span>
+      </li>
+      <li style="display:flex;gap:12px;align-items:flex-start;">
+        <span style="color:var(--red);font-size:16px;margin-top:3px;">✗</span>
+        <span style="font-size:15px;color:#94a3b8;">После «улучшения» кода один из ботов начал терять в 3 раза больше. Связь с изменениями нашлась не сразу</span>
+      </li>
+      <li style="display:flex;gap:12px;align-items:flex-start;">
+        <span style="color:var(--red);font-size:16px;margin-top:3px;">✗</span>
+        <span style="font-size:15px;color:#94a3b8;">Трейлинг-стоп сбрасывался в ноль при каждом перезапуске. Бот работал без защиты — и никак это не сообщал</span>
+      </li>
+      <li style="display:flex;gap:12px;align-items:flex-start;">
+        <span style="color:var(--red);font-size:16px;margin-top:3px;">✗</span>
+        <span style="font-size:15px;color:#94a3b8;">Стратегия выглядела идеально на 30-дневном тесте. На 80-дневном — та же логика уходила в убыток. Рынок поменялся, а бот не знал</span>
+      </li>
+      <li style="display:flex;gap:12px;align-items:flex-start;">
+        <span style="color:var(--red);font-size:16px;margin-top:3px;">✗</span>
+        <span style="font-size:15px;color:#94a3b8;">Монета после резкого движения вверх полностью блокировалась фильтром — волатильность читалась как нулевая. Бот видел её живой, но не торговал</span>
+      </li>
+      <li style="display:flex;gap:12px;align-items:flex-start;">
+        <span style="color:var(--red);font-size:16px;margin-top:3px;">✗</span>
+        <span style="font-size:15px;color:#94a3b8;">Защитный фильтр уходил в «тень» на основе неверных данных — пропускал реальные сигналы и торговал там где не должен был</span>
+      </li>
+      <li style="display:flex;gap:12px;align-items:flex-start;">
+        <span style="color:var(--red);font-size:16px;margin-top:3px;">✗</span>
+        <span style="font-size:15px;color:#94a3b8;">Бот сканировал рынок часами — и молчал. Не было ни одного сигнала, ни одного алерта. Выяснилось: он просто не видел данные</span>
+      </li>
     </ul>
   </div>
 
   <p>
-    Каждая из этих ошибок стоила времени, нервов или денег.
+    Это не полный список. Каждая из этих ошибок стоила времени, нервов или денег.
     <strong>В курсе мы разбираем их по одной — и показываем как их не допустить.</strong>
   </p>
 
