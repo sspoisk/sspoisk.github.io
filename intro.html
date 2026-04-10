@@ -224,36 +224,36 @@
       <li style="display:flex;gap:16px;align-items:flex-start;">
         <span style="color:var(--accent);font-size:20px;margin-top:2px;">▸</span>
         <div>
-          <strong style="color:var(--text);font-size:16px;">VPS-сервер в Европе</strong>
-          <div style="font-size:14px;color:var(--muted);margin-top:4px;">Арендуешь раз и забываешь. Бот живёт там постоянно, не зависит от твоего интернета и компьютера.</div>
+          <strong style="color:var(--text);font-size:16px;">Удалённый сервер</strong>
+          <div style="font-size:14px;color:var(--muted);margin-top:4px;">Бот живёт там постоянно, не зависит от твоего интернета и компьютера. Работает пока ты спишь.</div>
         </div>
       </li>
       <li style="display:flex;gap:16px;align-items:flex-start;">
         <span style="color:var(--accent);font-size:20px;margin-top:2px;">▸</span>
         <div>
-          <strong style="color:var(--text);font-size:16px;">Claude Code — твой исполнитель</strong>
-          <div style="font-size:14px;color:var(--muted);margin-top:4px;">Установлен прямо на сервере. Ты говоришь — что сделать. Он делает. Весь код под твоим контролем, без слепого копирования с Stack Overflow.</div>
+          <strong style="color:var(--text);font-size:16px;">AI как инструмент разработки</strong>
+          <div style="font-size:14px;color:var(--muted);margin-top:4px;">Не замена пониманию — а ускоритель. Без понимания архитектуры ты не сможешь контролировать что он делает. Этому и учит курс.</div>
         </div>
       </li>
       <li style="display:flex;gap:16px;align-items:flex-start;">
         <span style="color:var(--accent);font-size:20px;margin-top:2px;">▸</span>
         <div>
-          <strong style="color:var(--text);font-size:16px;">Торговая логика</strong>
-          <div style="font-size:14px;color:var(--muted);margin-top:4px;">Ты описываешь стратегию словами. Claude Code переводит это в код. Ты проверяешь на истории — и только потом запускаешь в боевой режим.</div>
+          <strong style="color:var(--text);font-size:16px;">Торговая логика + бэктест</strong>
+          <div style="font-size:14px;color:var(--muted);margin-top:4px;">Стратегия проверяется на истории прежде чем трогать реальные деньги. Знать это — мало. Правильно настроить — отдельная наука.</div>
         </div>
       </li>
       <li style="display:flex;gap:16px;align-items:flex-start;">
         <span style="color:var(--accent);font-size:20px;margin-top:2px;">▸</span>
         <div>
           <strong style="color:var(--text);font-size:16px;">Риск-менеджмент</strong>
-          <div style="font-size:14px;color:var(--muted);margin-top:4px;">Стоп-лоссы, лимиты на день, защита депозита — всё вшито в систему. Бот не может потерять больше, чем ты разрешил.</div>
+          <div style="font-size:14px;color:var(--muted);margin-top:4px;">Стоп-лоссы, лимиты на день, защита депозита. Самая незаметная часть — и самая важная.</div>
         </div>
       </li>
       <li style="display:flex;gap:16px;align-items:flex-start;">
         <span style="color:var(--accent);font-size:20px;margin-top:2px;">▸</span>
         <div>
-          <strong style="color:var(--text);font-size:16px;">Мониторинг и логи</strong>
-          <div style="font-size:14px;color:var(--muted);margin-top:4px;">Каждая сделка записывается. Ты можешь зайти в любой момент и увидеть что происходило пока ты спал.</div>
+          <strong style="color:var(--text);font-size:16px;">Мониторинг и автономность</strong>
+          <div style="font-size:14px;color:var(--muted);margin-top:4px;">Бот перезапускается сам, пишет логи, не требует твоего присутствия. Настроить это правильно — тоже отдельный модуль.</div>
         </div>
       </li>
     </ul>
@@ -272,10 +272,51 @@
       Если ты ищешь «кнопку», которая сделает всё сама — это не сюда.
       Если ты хочешь готового бота без понимания как он работает — это не сюда.
       Если тебя пугает слово «сервер» и ты не готов разобраться — это не сюда.<br><br>
-      <strong style="color:var(--text);">Курс для тех, кто готов потратить несколько недель чтобы построить систему,
+      <strong style="color:var(--text);">Курс для тех, кто готов потратить 3–4 месяца чтобы построить систему,
       которая потом работает годами.</strong>
     </p>
   </div>
+
+  <h2 style="margin-top:40px;">Что <span style="color:var(--red);">реально происходит</span> на пути</h2>
+  <p>За 3–4 месяца разработки мы прошли через это. Не как страшилка — как честная карта маршрута:</p>
+
+  <div class="contrast-block">
+    <ul style="list-style:none;display:flex;flex-direction:column;gap:14px;">
+      <li style="display:flex;gap:12px;align-items:flex-start;">
+        <span style="color:var(--red);font-size:16px;margin-top:3px;">✗</span>
+        <span style="font-size:15px;color:#94a3b8;">27 из 152 сделок закрывались в плюс — но по факту уходили в минус. Баг в расчёте цены входа жил в коде незаметно несколько недель</span>
+      </li>
+      <li style="display:flex;gap:12px;align-items:flex-start;">
+        <span style="color:var(--red);font-size:16px;margin-top:3px;">✗</span>
+        <span style="font-size:15px;color:#94a3b8;">Бот открывал одну и ту же позицию 6 раз подряд без паузы. Каждый раз — небольшой убыток. Никакого предупреждения в логах</span>
+      </li>
+      <li style="display:flex;gap:12px;align-items:flex-start;">
+        <span style="color:var(--red);font-size:16px;margin-top:3px;">✗</span>
+        <span style="font-size:15px;color:#94a3b8;">Сервис перезапускался 8000+ раз подряд — молча. Бот «работал», но не торговал</span>
+      </li>
+      <li style="display:flex;gap:12px;align-items:flex-start;">
+        <span style="color:var(--red);font-size:16px;margin-top:3px;">✗</span>
+        <span style="font-size:15px;color:#94a3b8;">11 перезапусков за одно утро из-за того что API-запрос блокировал весь сервер на 5 минут</span>
+      </li>
+      <li style="display:flex;gap:12px;align-items:flex-start;">
+        <span style="color:var(--red);font-size:16px;margin-top:3px;">✗</span>
+        <span style="font-size:15px;color:#94a3b8;">Позиция закрыта ботом — но осталась открытой на бирже. Деньги висели без контроля</span>
+      </li>
+      <li style="display:flex;gap:12px;align-items:flex-start;">
+        <span style="color:var(--red);font-size:16px;margin-top:3px;">✗</span>
+        <span style="font-size:15px;color:#94a3b8;">Стоп-лосс срабатывал не там где был выставлен — из-за устаревших данных после перезапуска</span>
+      </li>
+      <li style="display:flex;gap:12px;align-items:flex-start;">
+        <span style="color:var(--red);font-size:16px;margin-top:3px;">✗</span>
+        <span style="font-size:15px;color:#94a3b8;">Бот в бэктесте показывал WR 70%. На живом рынке — 41%. Причина нашлась только через месяц</span>
+      </li>
+    </ul>
+  </div>
+
+  <p>
+    Каждая из этих ошибок стоила времени, нервов или денег.
+    <strong>В курсе мы разбираем их по одной — и показываем как их не допустить.</strong>
+  </p>
 
   <p>
     Мы не обещаем гарантированную прибыль. Торговля — это работа с вероятностями.
