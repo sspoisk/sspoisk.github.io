@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How the Market Works and Why Only Your Own Strategy Succeeds — NEXUS</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+.guide-hero { padding: 64px 32px 48px; max-width: 800px; margin: 0 auto; }
+.guide-hero .eyebrow { font-size: 12px; color: var(--accent); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 16px; }
+.guide-hero h1 { font-size: clamp(26px, 4vw, 44px); font-weight: 700; line-height: 1.25; margin-bottom: 20px; }
+.guide-hero h1 span { color: var(--accent); }
+.guide-hero .lead { font-size: 18px; color: #94a3b8; line-height: 1.75; }
+
+.guide-body { max-width: 800px; margin: 0 auto; padding: 0 32px 80px; }
+
+.guide-section { margin-bottom: 56px; }
+.guide-section h2 { font-size: clamp(20px, 3vw, 28px); font-weight: 700; margin-bottom: 20px; line-height: 1.3; }
+.guide-section h2 .num { color: var(--accent); margin-right: 10px; font-size: 0.75em; font-weight: 400; letter-spacing: 1px; text-transform: uppercase; }
+.guide-section p { font-size: 16px; color: #cbd5e1; line-height: 1.85; margin-bottom: 16px; }
+.guide-section p:last-child { margin-bottom: 0; }
+.guide-section strong { color: var(--text); }
+
+.callout { background: #111827; border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: 0 8px 8px 0; padding: 20px 24px; margin: 24px 0; }
+.callout p { margin: 0; font-size: 15px; color: #94a3b8; }
+.callout p strong { color: var(--text); }
+
+.callout.red { border-left-color: #f87171; }
+.callout.red p { color: #fca5a5; }
+.callout.yellow { border-left-color: var(--yellow); }
+.callout.yellow p { color: #fde68a; }
+.callout.green { border-left-color: var(--green); }
+.callout.green p { color: #86efac; }
+
+.players-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin: 24px 0; }
+.player-card { background: #111827; border: 1px solid var(--border); border-radius: 10px; padding: 20px; }
+.player-card .player-icon { font-size: 28px; margin-bottom: 10px; }
+.player-card .player-name { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
+.player-card .player-desc { font-size: 13px; color: var(--muted); line-height: 1.6; }
+.player-card .player-edge { font-size: 12px; color: var(--accent); margin-top: 10px; font-weight: 600; }
+
+.steps-guide { display: flex; flex-direction: column; gap: 0; margin: 24px 0; }
+.step-guide { display: flex; gap: 20px; padding: 20px 0; border-bottom: 1px solid var(--border); }
+.step-guide:last-child { border-bottom: none; }
+.step-guide-num { background: var(--card); border: 1px solid var(--border); border-radius: 8px; min-width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 700; color: var(--accent); flex-shrink: 0; }
+.step-guide-body .step-guide-title { font-size: 16px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+.step-guide-body .step-guide-desc { font-size: 14px; color: var(--muted); line-height: 1.6; }
+
+.divider { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
+
+.cta-block { background: linear-gradient(135deg, #0c1a2e 0%, #1e2d45 100%); border: 1px solid var(--accent); border-radius: 16px; padding: 40px; text-align: center; margin-top: 48px; }
+.cta-block h3 { font-size: 24px; font-weight: 700; margin-bottom: 12px; }
+.cta-block p { font-size: 16px; color: #94a3b8; margin-bottom: 28px; line-height: 1.7; }
+.cta-block .cta { display: inline-flex; align-items: center; gap: 8px; background: var(--accent); color: #0a0f1e; padding: 14px 28px; border-radius: 8px; font-weight: 700; font-size: 16px; text-decoration: none; transition: opacity .2s; }
+.cta-block .cta:hover { opacity: .85; }
+.cta-block .cta.secondary { background: transparent; border: 1px solid var(--accent); color: var(--accent); margin-left: 12px; }
+
+nav.topnav { padding: 16px 32px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 24px; }
+nav.topnav a { color: var(--muted); font-size: 14px; text-decoration: none; transition: color .2s; }
+nav.topnav a:hover { color: var(--text); }
+nav.topnav .logo { font-weight: 700; color: var(--accent); font-size: 16px; margin-right: auto; text-decoration: none; }
+</style>
+</head>
+<body>
+
+<nav class="topnav">
+  <a href="../index.html" class="logo">NEXUS</a>
+  <a href="../index.html">Home</a>
+  <a href="../order.html">Order a Bot</a>
+  <a href="../pricing.html">Course</a>
+</nav>
+
+<div class="guide-hero">
+  <div class="eyebrow">Fundamentals</div>
+  <h1>Why Someone Else's Strategy <span>Doesn't Work</span> — and How to Find Your Own</h1>
+  <p class="lead">A plain-English explanation of how markets actually work. No jargon, no magic. Just mechanics.</p>
+</div>
+
+<div class="guide-body">
+
+  <!-- SECTION 1 -->
+  <div class="guide-section">
+    <h2><span class="num">01 —</span> Price Is Simply an Agreement</h2>
+    <p>Bitcoin is worth $84,000 not because it "should" be worth that. Not because the exchange calculated it. And not because somewhere it says "fair value of BTC = $84k".</p>
+    <p>It's worth exactly that because right now one person is willing to sell for $84,000 — and another person is willing to buy. That's it. No magic beyond that.</p>
+
+    <div class="callout">
+      <p><strong>Price is the point where a seller and buyer agreed.</strong> Not a "truth", not a "valuation", not "fairness". Just the moment two people reached an agreement.</p>
+    </div>
+
+    <p>When there are more buyers than sellers — price drifts up. More sellers than buyers — it drifts down. The market moves when this balance is disrupted. For any reason at all.</p>
+  </div>
+
+  <!-- SECTION 2 -->
+  <div class="guide-section">
+    <h2><span class="num">02 —</span> Three Types of Players — and Where You Fit</h2>
+    <p>Not everyone is equal in the market. Broadly speaking, there are three categories of participants, and each plays a different game.</p>
+
+    <div class="players-grid">
+      <div class="player-card">
+        <div class="player-icon">🏦</div>
+        <div class="player-name">Market Makers</div>
+        <div class="player-desc">Large structures that stand on both sides of the market simultaneously. Always ready to buy slightly lower and sell slightly higher. They profit from the spread — the difference between the bid and ask price.</div>
+        <div class="player-edge">They don't need to guess direction</div>
+      </div>
+      <div class="player-card">
+        <div class="player-icon">🐋</div>
+        <div class="player-name">Institutions</div>
+        <div class="player-desc">Hedge funds, large traders. They have enormous capital, but that's also their problem — they can't enter or exit quickly without moving the price against themselves. They need liquidity.</div>
+        <div class="player-edge">Strength = money. Weakness = slowness</div>
+      </div>
+      <div class="player-card">
+        <div class="player-icon">👤</div>
+        <div class="player-name">Retail — You</div>
+        <div class="player-desc">Small size, high speed. You can enter and exit in seconds without impacting the price. You can trade where the big player has nothing to gain — small-cap coins, fast moves.</div>
+        <div class="player-edge">Your only edge — speed and flexibility</div>
+      </div>
+    </div>
+
+    <p>Once you understand this, it becomes clear: playing "buy and hold like a fund" or "copy a professional's signals" means not using your own advantage. It's playing by someone else's rules on someone else's field.</p>
+  </div>
+
+  <!-- SECTION 3 -->
+  <div class="guide-section">
+    <h2><span class="num">03 —</span> Why the Market Moves at All</h2>
+    <p>Price movement always has a reason. Sometimes obvious, sometimes not. Three main sources:</p>
+
+    <p><strong>News and events.</strong> Someone knew earlier — bought earlier. By the time the news appears on most people's screens, the smart money is already inside. That's why "trading the news" — in most cases — means buying from people who entered three hours ago.</p>
+
+    <p><strong>Large order flow.</strong> A big player doesn't enter in a single trade. They accumulate a position gradually — over hours, sometimes days. Visible in volume: price slowly creeps up for no apparent reason, volume above normal. That's accumulation.</p>
+
+    <p><strong>Technical levels and liquidity.</strong> This is the most interesting part. Huge numbers of traders place stops at the same spots — below round numbers, below local lows. The big player needs liquidity to build a position. So price often goes where stops are sitting, triggers them — and reverses.</p>
+
+    <div class="callout yellow">
+      <p><strong>The market is not random, but it's not predictable either.</strong> It has logic. But the logic is probabilistic — "usually this way", not "always this way".</p>
+    </div>
+  </div>
+
+  <!-- SECTION 4 -->
+  <div class="guide-section">
+    <h2><span class="num">04 —</span> Why Someone Else's Strategy Doesn't Work</h2>
+    <p>Here's where most people go wrong. People look for a "working strategy" as though it were a recipe — find it, reproduce it, everything works.</p>
+    <p>That's not how it works. Here's why.</p>
+
+    <div class="callout red">
+      <p><strong>A market inefficiency disappears as soon as enough people discover it.</strong></p>
+    </div>
+
+    <p>Imagine: in 2012 someone noticed — "when RSI drops below 30, there's often a bounce". They traded it and made money. Then they wrote about it in a blog. Then a book came out. Then it made its way into every technical analysis course.</p>
+    <p>Now when RSI = 29 — thousands of people and hundreds of algorithms buy simultaneously. Price spikes before most of them can even enter. The edge is gone.</p>
+
+    <p>Even worse — paid signals and "strategies for sale":</p>
+    <p>1000 people subscribed to one channel. They receive one signal. Everyone enters simultaneously. The big player sees this — and sells into the order book. The buyers supported the price with their money, the smart money exited.</p>
+
+    <div class="callout red">
+      <p><strong>A public strategy is a strategy that has already lost its edge.</strong> Otherwise, it wouldn't have been published.</p>
+    </div>
+
+    <p>This doesn't mean technical analysis is useless. It means RSI on its own is not a strategy. It's a tool. The strategy is how you use it, in what context, with what filters, in what market regime.</p>
+  </div>
+
+  <hr class="divider">
+
+  <!-- SECTION 5 -->
+  <div class="guide-section">
+    <h2><span class="num">05 —</span> What a Real Edge Looks Like</h2>
+    <p>In professional terms this is called an <strong>edge</strong> — an advantage over the market. Something you do that others don't do or can't.</p>
+
+    <p>Examples of real edges that work:</p>
+
+    <p><strong>Adapting to market regime.</strong> Markets alternate between trending and ranging. Most strategies only work in one of them. If you can identify the regime and switch tactics accordingly — that's an edge. Not magic, not prediction. Just adaptation.</p>
+
+    <p><strong>Specifics of a particular coin.</strong> Different coins behave differently. One has higher volatility in the mornings, another moves after BTC breaks out of a range. If you've observed enough — you see patterns others missed because they were watching something else.</p>
+
+    <p><strong>Speed and discipline.</strong> Most traders break their own rules — entering without a signal, skipping stops, holding losing positions "just a little longer". A bot that rigidly follows rules already has an edge over 90% of the market.</p>
+
+    <div class="callout green">
+      <p><strong>An edge is not a secret formula. It's what you do consistently while others make mistakes.</strong></p>
+    </div>
+  </div>
+
+  <!-- SECTION 6 -->
+  <div class="guide-section">
+    <h2><span class="num">06 —</span> How to Find Your Own Strategy</h2>
+    <p>You don't need to be a genius and you don't need years of experience. You need a method. Here's how it works in practice:</p>
+
+    <div class="steps-guide">
+      <div class="step-guide">
+        <div class="step-guide-num">1</div>
+        <div class="step-guide-body">
+          <div class="step-guide-title">Observe and ask questions</div>
+          <div class="step-guide-desc">Look at charts with the question "why". Why is there a reversal here? What happened before this rally? What was the volume at that moment? Don't look for the answer in a book — look for it on the chart.</div>
+        </div>
+      </div>
+      <div class="step-guide">
+        <div class="step-guide-num">2</div>
+        <div class="step-guide-body">
+          <div class="step-guide-title">Form a hypothesis</div>
+          <div class="step-guide-desc">"It seems like after a sharp drop on high volume there's often a bounce within 2 hours". Specific. Measurable. Not "the market sometimes goes up".</div>
+        </div>
+      </div>
+      <div class="step-guide">
+        <div class="step-guide-num">3</div>
+        <div class="step-guide-body">
+          <div class="step-guide-title">Test it on historical data</div>
+          <div class="step-guide-desc">Take a year of data. Count how many times it worked and how many times it didn't. If 55%+ — already interesting. If 40% — the hypothesis doesn't hold, find another one.</div>
+        </div>
+      </div>
+      <div class="step-guide">
+        <div class="step-guide-num">4</div>
+        <div class="step-guide-body">
+          <div class="step-guide-title">Add filters</div>
+          <div class="step-guide-desc">Maybe it only works in a trend? Only on certain coins? Only during high volatility? Filters remove bad signals and improve accuracy.</div>
+        </div>
+      </div>
+      <div class="step-guide">
+        <div class="step-guide-num">5</div>
+        <div class="step-guide-body">
+          <div class="step-guide-title">Automate</div>
+          <div class="step-guide-desc">Once the strategy is tested and understood — that's when you need a bot. Not before. A bot executes rules better than a human: no emotions, no fatigue, 24/7.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <p><strong>The core principle:</strong> a strategy must have a logic you can explain in words. "I buy when RSI is low" — that's not an explanation. "I buy a pullback in an uptrend because the big player will continue accumulating on the correction" — that's an explanation.</p>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-block">
+    <h3>Want to learn how to do this yourself?</h3>
+    <p>The NEXUS course covers the full path: from your first market observations to a working automated bot built on your own strategy. No magic, no promises of "easy money". Just method.</p>
+    <a href="../pricing.html" class="cta">View Course →</a>
+    <a href="../order.html" class="cta secondary">Order a Bot</a>
+  </div>
+
+</div>
+
+</body>
+</html>

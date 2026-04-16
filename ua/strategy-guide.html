@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Як працює ринок і чому тільки своя стратегія — NEXUS</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+.guide-hero { padding: 64px 32px 48px; max-width: 800px; margin: 0 auto; }
+.guide-hero .eyebrow { font-size: 12px; color: var(--accent); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 16px; }
+.guide-hero h1 { font-size: clamp(26px, 4vw, 44px); font-weight: 700; line-height: 1.25; margin-bottom: 20px; }
+.guide-hero h1 span { color: var(--accent); }
+.guide-hero .lead { font-size: 18px; color: #94a3b8; line-height: 1.75; }
+
+.guide-body { max-width: 800px; margin: 0 auto; padding: 0 32px 80px; }
+
+.guide-section { margin-bottom: 56px; }
+.guide-section h2 { font-size: clamp(20px, 3vw, 28px); font-weight: 700; margin-bottom: 20px; line-height: 1.3; }
+.guide-section h2 .num { color: var(--accent); margin-right: 10px; font-size: 0.75em; font-weight: 400; letter-spacing: 1px; text-transform: uppercase; }
+.guide-section p { font-size: 16px; color: #cbd5e1; line-height: 1.85; margin-bottom: 16px; }
+.guide-section p:last-child { margin-bottom: 0; }
+.guide-section strong { color: var(--text); }
+
+.callout { background: #111827; border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: 0 8px 8px 0; padding: 20px 24px; margin: 24px 0; }
+.callout p { margin: 0; font-size: 15px; color: #94a3b8; }
+.callout p strong { color: var(--text); }
+
+.callout.red { border-left-color: #f87171; }
+.callout.red p { color: #fca5a5; }
+.callout.yellow { border-left-color: var(--yellow); }
+.callout.yellow p { color: #fde68a; }
+.callout.green { border-left-color: var(--green); }
+.callout.green p { color: #86efac; }
+
+.players-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin: 24px 0; }
+.player-card { background: #111827; border: 1px solid var(--border); border-radius: 10px; padding: 20px; }
+.player-card .player-icon { font-size: 28px; margin-bottom: 10px; }
+.player-card .player-name { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
+.player-card .player-desc { font-size: 13px; color: var(--muted); line-height: 1.6; }
+.player-card .player-edge { font-size: 12px; color: var(--accent); margin-top: 10px; font-weight: 600; }
+
+.steps-guide { display: flex; flex-direction: column; gap: 0; margin: 24px 0; }
+.step-guide { display: flex; gap: 20px; padding: 20px 0; border-bottom: 1px solid var(--border); }
+.step-guide:last-child { border-bottom: none; }
+.step-guide-num { background: var(--card); border: 1px solid var(--border); border-radius: 8px; min-width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 700; color: var(--accent); flex-shrink: 0; }
+.step-guide-body .step-guide-title { font-size: 16px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+.step-guide-body .step-guide-desc { font-size: 14px; color: var(--muted); line-height: 1.6; }
+
+.divider { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
+
+.cta-block { background: linear-gradient(135deg, #0c1a2e 0%, #1e2d45 100%); border: 1px solid var(--accent); border-radius: 16px; padding: 40px; text-align: center; margin-top: 48px; }
+.cta-block h3 { font-size: 24px; font-weight: 700; margin-bottom: 12px; }
+.cta-block p { font-size: 16px; color: #94a3b8; margin-bottom: 28px; line-height: 1.7; }
+.cta-block .cta { display: inline-flex; align-items: center; gap: 8px; background: var(--accent); color: #0a0f1e; padding: 14px 28px; border-radius: 8px; font-weight: 700; font-size: 16px; text-decoration: none; transition: opacity .2s; }
+.cta-block .cta:hover { opacity: .85; }
+.cta-block .cta.secondary { background: transparent; border: 1px solid var(--accent); color: var(--accent); margin-left: 12px; }
+
+nav.topnav { padding: 16px 32px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 24px; }
+nav.topnav a { color: var(--muted); font-size: 14px; text-decoration: none; transition: color .2s; }
+nav.topnav a:hover { color: var(--text); }
+nav.topnav .logo { font-weight: 700; color: var(--accent); font-size: 16px; margin-right: auto; text-decoration: none; }
+</style>
+</head>
+<body>
+
+<nav class="topnav">
+  <a href="../index.html" class="logo">NEXUS</a>
+  <a href="../index.html">Головна</a>
+  <a href="../order.html">Замовити бота</a>
+  <a href="../pricing.html">Курс</a>
+</nav>
+
+<div class="guide-hero">
+  <div class="eyebrow">Основи</div>
+  <h1>Чому чужа стратегія <span>не працює</span> — і як знайти свою</h1>
+  <p class="lead">Просте пояснення того, як насправді влаштований ринок. Без термінології, без магії. Тільки механіка.</p>
+</div>
+
+<div class="guide-body">
+
+  <!-- SECTION 1 -->
+  <div class="guide-section">
+    <h2><span class="num">01 —</span> Ціна — це просто домовленість</h2>
+    <p>Біткоїн коштує $84,000 не тому що він «повинен» стільки коштувати. Не тому що так порахувала біржа. І не тому що десь написано «справедлива ціна BTC = $84k».</p>
+    <p>Він коштує рівно стільки, тому що прямо зараз одна людина готова продати за $84,000 — і знайшлася інша, яка готова купити. Все. Більше ніякої магії.</p>
+
+    <div class="callout">
+      <p><strong>Ціна — це точка, де продавець і покупець погодились.</strong> Не «правда», не «оцінка», не «справедливість». Просто момент згоди двох людей.</p>
+    </div>
+
+    <p>Коли охочих купити більше ніж продати — ціна повзе вгору. Продавців більше — вниз. Ринок рухається тоді, коли цей баланс порушується. З будь-якої причини.</p>
+  </div>
+
+  <!-- SECTION 2 -->
+  <div class="guide-section">
+    <h2><span class="num">02 —</span> Три типи гравців — і хто ти серед них</h2>
+    <p>На ринку не всі рівні. Грубо кажучи, є три категорії учасників, і у кожного своя гра.</p>
+
+    <div class="players-grid">
+      <div class="player-card">
+        <div class="player-icon">🏦</div>
+        <div class="player-name">Маркетмейкери</div>
+        <div class="player-desc">Великі структури, які стоять по обидва боки ринку одночасно. Завжди готові купити трохи дешевше і продати трохи дорожче. Заробляють на спреді — різниці між ціною покупки і продажу.</div>
+        <div class="player-edge">Їм не потрібно вгадувати напрямок</div>
+      </div>
+      <div class="player-card">
+        <div class="player-icon">🐋</div>
+        <div class="player-name">Інституціонали</div>
+        <div class="player-desc">Хедж-фонди, великі трейдери. У них величезні гроші, але це і проблема — вони не можуть швидко зайти чи вийти, не зрушивши ціну проти себе. Їм потрібна ліквідність.</div>
+        <div class="player-edge">Сила = гроші. Слабкість = повільність</div>
+      </div>
+      <div class="player-card">
+        <div class="player-icon">👤</div>
+        <div class="player-name">Роздріб — ти</div>
+        <div class="player-desc">Малий обсяг, висока швидкість. Можеш зайти і вийти за секунди без впливу на ціну. Можеш торгувати там, де великому гравцю нічого ловити — дрібні монети, швидкі рухи.</div>
+        <div class="player-edge">Єдина перевага — швидкість і гнучкість</div>
+      </div>
+    </div>
+
+    <p>Розуміючи це, одразу стає зрозуміло: гра в «купив і тримаю як фонд» або «копіюю сигнали профі» — це не використання своєї переваги. Це гра за чужими правилами на чужому полі.</p>
+  </div>
+
+  <!-- SECTION 3 -->
+  <div class="guide-section">
+    <h2><span class="num">03 —</span> Чому ринок взагалі рухається</h2>
+    <p>Рух ціни завжди має причину. Іноді очевидну, іноді ні. Три основних джерела:</p>
+
+    <p><strong>Новини та події.</strong> Хтось дізнався раніше — купив раніше. До того моменту як новина з'являється на екрані більшості, розумні гроші вже всередині. Тому «торгувати новини» — у більшості випадків означає купувати у тих, хто вже заходив три години тому.</p>
+
+    <p><strong>Потік великих ордерів.</strong> Великий гравець не заходить однією угодою. Він накопичує позицію поступово — годинами, іноді днями. Видно по обсягу: ціна повільно повзе вгору без видимої причини, обсяг вище норми. Це акумуляція.</p>
+
+    <p><strong>Технічні рівні та ліквідність.</strong> Це найцікавіше. Величезна кількість трейдерів ставлять стопи в одних і тих самих місцях — під круглими числами, під локальними мінімумами. Великому гравцю потрібна ліквідність щоб набрати позицію. Тому ціна часто йде туди, де стоять стопи, вибиває їх — і розвертається.</p>
+
+    <div class="callout yellow">
+      <p><strong>Ринок не випадковий, але й не передбачуваний.</strong> У нього є логіка. Але логіка імовірнісна — «найчастіше так», а не «завжди так».</p>
+    </div>
+  </div>
+
+  <!-- SECTION 4 -->
+  <div class="guide-section">
+    <h2><span class="num">04 —</span> Чому чужа стратегія не працює</h2>
+    <p>Ось де більшість помиляється. Люди шукають «робочу стратегію» наче це рецепт пирога — знайшов, відтворив, все працює.</p>
+    <p>Так не працює. Ось чому.</p>
+
+    <div class="callout red">
+      <p><strong>Ринкова неефективність зникає як тільки її знаходить достатньо людей.</strong></p>
+    </div>
+
+    <p>Уяви: у 2012 році хтось помітив — «якщо RSI падає нижче 30, це часто відскок». Він торгував цим і заробляв. Потім написав про це в блозі. Потім вийшла книга. Потім це увійшло у всі курси з технічного аналізу.</p>
+    <p>Зараз коли RSI = 29 — одночасно купують тисячі людей і сотні алгоритмів. Ціна підскакує до того як більшість встигає зайти. Edge зник.</p>
+
+    <p>Ще гірше — платні сигнали і «стратегії на продаж»:</p>
+    <p>1000 людей підписались на один канал. Отримують один сигнал. Всі входять одночасно. Великий гравець це бачить — і продає їм у стакан. Покупці підтримали ціну своїми грошима, розумні гроші вийшли.</p>
+
+    <div class="callout red">
+      <p><strong>Публічна стратегія — це стратегія у якої вже немає переваги.</strong> Інакше її б не публікували.</p>
+    </div>
+
+    <p>Це не означає що технічний аналіз марний. Це означає що RSI сам по собі — не стратегія. Це інструмент. Стратегія — це як ти його використовуєш, в якому контексті, з якими фільтрами, в якому режимі ринку.</p>
+  </div>
+
+  <hr class="divider">
+
+  <!-- SECTION 5 -->
+  <div class="guide-section">
+    <h2><span class="num">05 —</span> Що таке справжня перевага</h2>
+    <p>На професійній мові це називається <strong>edge</strong> — перевага перед ринком. Щось, що ти робиш, чого інші не роблять або не можуть.</p>
+
+    <p>Приклади реальних edge-ів які працюють:</p>
+
+    <p><strong>Адаптація до режиму ринку.</strong> Ринок буває трендовим і боковим. Більшість стратегій працюють тільки в одному з них. Якщо ти вмієш визначати режим і перемикати тактику — це перевага. Не магія, не передбачення. Просто адаптація.</p>
+
+    <p><strong>Специфіка конкретної монети.</strong> Різні монети поводяться по-різному. У однієї волатильність вища вранці, у іншої — після виходу BTC з бокового руху. Якщо ти спостерігав достатньо — ти бачиш патерни які інші не помітили бо дивились на інше.</p>
+
+    <p><strong>Швидкість і дисципліна.</strong> Більшість трейдерів порушують власні правила — входять не по сигналу, не ставлять стоп, тримають збиткову позицію «ще трохи». Бот який жорстко дотримується правил — вже має перевагу перед 90% ринку.</p>
+
+    <div class="callout green">
+      <p><strong>Edge — це не секретна формула. Це те, що ти робиш послідовно, поки інші роблять помилки.</strong></p>
+    </div>
+  </div>
+
+  <!-- SECTION 6 -->
+  <div class="guide-section">
+    <h2><span class="num">06 —</span> Як знайти свою стратегію</h2>
+    <p>Не потрібен геній і не потрібні роки. Потрібен метод. Ось як це працює на практиці:</p>
+
+    <div class="steps-guide">
+      <div class="step-guide">
+        <div class="step-guide-num">1</div>
+        <div class="step-guide-body">
+          <div class="step-guide-title">Спостерігай і задавай питання</div>
+          <div class="step-guide-desc">Дивись на графіки з питанням «чому». Чому тут розворот? Що було перед цим зростанням? Який обсяг був у цей момент? Не шукай відповідь у книзі — шукай її на графіку.</div>
+        </div>
+      </div>
+      <div class="step-guide">
+        <div class="step-guide-num">2</div>
+        <div class="step-guide-body">
+          <div class="step-guide-title">Сформулюй гіпотезу</div>
+          <div class="step-guide-desc">«Мені здається, після сильного падіння на високому обсязі часто йде відскок протягом 2 годин». Конкретно. Вимірювано. Не «ринок іноді зростає».</div>
+        </div>
+      </div>
+      <div class="step-guide">
+        <div class="step-guide-num">3</div>
+        <div class="step-guide-body">
+          <div class="step-guide-title">Перевір на історії</div>
+          <div class="step-guide-desc">Візьми дані за рік. Порахуй скільки разів це працювало, скільки ні. Якщо 55%+ — вже цікаво. Якщо 40% — гіпотеза не працює, шукай іншу.</div>
+        </div>
+      </div>
+      <div class="step-guide">
+        <div class="step-guide-num">4</div>
+        <div class="step-guide-body">
+          <div class="step-guide-title">Додай фільтри</div>
+          <div class="step-guide-desc">Може це працює тільки в тренді? Тільки на певних монетах? Тільки при високій волатильності? Фільтри прибирають погані сигнали і підвищують точність.</div>
+        </div>
+      </div>
+      <div class="step-guide">
+        <div class="step-guide-num">5</div>
+        <div class="step-guide-body">
+          <div class="step-guide-title">Автоматизуй</div>
+          <div class="step-guide-desc">Коли стратегія протестована і зрозуміла — ось тут потрібен бот. Не раніше. Бот виконує правила краще людини: без емоцій, без втоми, 24/7.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <p><strong>Головний принцип:</strong> стратегія повинна мати логіку яку ти можеш пояснити словами. «Я купую коли RSI низький» — це не пояснення. «Я купую відкат у висхідному тренді тому що великий гравець продовжить накопичувати на корекції» — це пояснення.</p>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-block">
+    <h3>Хочеш навчитися робити це сам?</h3>
+    <p>У курсі NEXUS — повний шлях: від перших спостережень за ринком до робочого автоматизованого бота на твоїй стратегії. Без магії, без обіцянок «легких грошей». Тільки метод.</p>
+    <a href="../pricing.html" class="cta">Дивитись курс →</a>
+    <a href="../order.html" class="cta secondary">Замовити бота</a>
+  </div>
+
+</div>
+
+</body>
+</html>

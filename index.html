@@ -1,12 +1,326 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
 <meta charset="UTF-8">
-<meta http-equiv="refresh" content="0; url=https://nexus-bot.pro/">
-<link rel="canonical" href="https://nexus-bot.pro/">
-<title>Переход на nexus-bot.pro...</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NEXUS — Crypto & AI Trading Systems</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --bg: #0a0f1e;
+    --card: #111827;
+    --border: #1e2d45;
+    --accent: #38bdf8;
+    --green: #4ade80;
+    --yellow: #fbbf24;
+    --text: #e2e8f0;
+    --muted: #64748b;
+    --course-bg: linear-gradient(135deg, #0c1a2e 0%, #1e2d45 100%);
+  }
+  body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.6; }
+
+  /* HERO SECTION */
+  .hero { padding: 80px 24px 60px; text-align: center; border-bottom: 1px solid var(--border); }
+  .hero-badge { display: inline-block; background: #0c1a2e; border: 1px solid var(--accent); color: var(--accent); font-size: 12px; padding: 4px 14px; border-radius: 20px; margin-bottom: 24px; letter-spacing: 1px; text-transform: uppercase; }
+  .hero h1 { font-size: clamp(28px, 5vw, 52px); font-weight: 700; margin-bottom: 16px; line-height: 1.2; }
+  .hero h1 span { color: var(--accent); }
+  .hero p { font-size: 18px; color: var(--muted); max-width: 700px; margin: 0 auto 36px; }
+  .hero-tags { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: 40px; }
+  .tag { background: #0c1a2e; border: 1px solid var(--border); color: #94a3b8; padding: 6px 14px; border-radius: 6px; font-size: 13px; }
+  .cta-group { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+  .cta { display: inline-flex; align-items: center; gap: 8px; background: var(--accent); color: #0a0f1e; padding: 14px 28px; border-radius: 8px; font-weight: 700; font-size: 16px; text-decoration: none; transition: opacity .2s; }
+  .cta.secondary { background: transparent; border: 1px solid var(--accent); color: var(--accent); }
+  .cta:hover { opacity: .85; }
+
+  /* COMMON SECTION STYLES */
+  .section { max-width: 1100px; margin: 0 auto; padding: 64px 24px; }
+  .section-title { font-size: 13px; color: var(--accent); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 12px; }
+  .section-h2 { font-size: clamp(22px, 3vw, 36px); font-weight: 700; margin-bottom: 40px; }
+
+  /* METRICS */
+  .metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 16px; margin-bottom: 60px; }
+  .metric { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 24px; text-align: center; }
+  .metric-val { font-size: 32px; font-weight: 700; color: var(--accent); }
+  .metric-label { font-size: 13px; color: var(--muted); margin-top: 4px; }
+
+  /* COURSE CARD */
+  .course-section { background: var(--course-bg); border: 1px solid var(--accent); border-radius: 16px; padding: 40px; margin-bottom: 60px; }
+  .course-info h3 { font-size: 28px; margin-bottom: 16px; color: var(--yellow); }
+  .course-result { font-size: 20px; font-weight: 700; color: var(--text); margin-bottom: 16px; padding: 16px 20px; background: rgba(56,189,248,0.08); border-left: 3px solid var(--accent); border-radius: 4px; }
+  .course-info p { margin-bottom: 24px; font-size: 17px; color: #cbd5e1; }
+  .course-modules { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin-bottom: 32px; }
+  .course-module { background: rgba(255,255,255,0.04); border: 1px solid var(--border); border-radius: 8px; padding: 14px 16px; }
+  .course-module-num { font-size: 11px; color: var(--accent); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 4px; }
+  .course-module-name { font-size: 14px; font-weight: 600; color: var(--text); }
+  .course-module-desc { font-size: 12px; color: var(--muted); margin-top: 4px; }
+  .course-plans { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 32px; }
+  .course-plan { background: rgba(255,255,255,0.04); border: 1px solid var(--border); border-radius: 12px; padding: 24px; text-align: center; }
+  .course-plan.featured { border-color: var(--accent); background: rgba(56,189,248,0.06); }
+  .course-plan-name { font-size: 13px; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+  .course-plan-price { font-size: 32px; font-weight: 700; color: var(--yellow); margin-bottom: 8px; }
+  .course-plan-desc { font-size: 13px; color: #94a3b8; margin-bottom: 16px; }
+  .course-plan-features { list-style: none; text-align: left; display: flex; flex-direction: column; gap: 6px; }
+  .course-plan-features li { font-size: 13px; color: #94a3b8; padding-left: 18px; position: relative; }
+  .course-plan-features li::before { content: '✓'; position: absolute; left: 0; color: var(--green); font-weight: 700; }
+
+  /* BOTS GRID */
+  .bots-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+  .bot-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 28px; position: relative; overflow: hidden; transition: border-color .2s; }
+  .bot-card:hover { border-color: var(--accent); }
+  .bot-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; }
+  .bot-card.blue::before { background: var(--accent); }
+  .bot-card.yellow::before { background: var(--yellow); }
+  .bot-card.purple::before { background: #a78bfa; }
+  .bot-icon { font-size: 28px; margin-bottom: 14px; }
+  .bot-name { font-size: 18px; font-weight: 700; margin-bottom: 6px; }
+  .bot-type { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px; }
+  .bot-desc { font-size: 14px; color: #94a3b8; margin-bottom: 20px; line-height: 1.7; }
+  .bot-features { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .bot-features li { font-size: 13px; color: #94a3b8; padding-left: 20px; position: relative; }
+  .bot-features li::before { content: '✓'; position: absolute; left: 0; color: var(--green); font-weight: 700; }
+
+  /* SERVICES */
+  .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+  .service-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 24px; }
+  .service-icon { font-size: 24px; margin-bottom: 12px; }
+  .service-title { font-size: 15px; font-weight: 600; margin-bottom: 8px; }
+  .service-desc { font-size: 13px; color: var(--muted); }
+
+  /* STACK */
+  .stack-grid { display: flex; flex-wrap: wrap; gap: 12px; }
+  .stack-item { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 10px 18px; font-size: 14px; color: #94a3b8; }
+  .stack-item span { color: var(--accent); margin-right: 6px; }
+
+  /* CONTACT */
+  .contact { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 48px; text-align: center; }
+  .contact h2 { font-size: 28px; font-weight: 700; margin-bottom: 12px; }
+  .contact p { color: var(--muted); margin-bottom: 32px; font-size: 16px; }
+  .contact-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+  .btn-tg { display: inline-flex; align-items: center; gap: 8px; background: #2481cc; color: #fff; padding: 14px 28px; border-radius: 8px; font-weight: 600; text-decoration: none; font-size: 15px; }
+  .btn-secondary { display: inline-flex; align-items: center; gap: 8px; background: transparent; border: 1px solid var(--border); color: var(--text); padding: 14px 28px; border-radius: 8px; font-weight: 600; text-decoration: none; font-size: 15px; }
+
+  .divider { border: none; border-top: 1px solid var(--border); margin: 20px 0; }
+  footer { text-align: center; padding: 32px; color: var(--muted); font-size: 13px; }
+</style>
 </head>
 <body>
-<script>window.location.href = "https://nexus-bot.pro/"</script>
+
+<div class="hero">
+  <div class="hero-badge">⚡ Доступен для новых проектов и обучения</div>
+  <h1>Стань инженером<br><span>автономных систем</span></h1>
+  <p>Не курс по Python. Учишься управлять AI — он строит систему. Бот работает 24/7 на сервере в Европе без тебя.</p>
+  <div class="hero-tags">
+    <span class="tag">Python 3.12</span>
+    <span class="tag">VPS / AI</span>
+    <span class="tag">ccxt / Binance / Bybit</span>
+    <span class="tag">Autonomous Systems</span>
+  </div>
+  <div class="cta-group">
+    <a href="intro.html" class="cta">▶ Читать введение — бесплатно</a>
+    <a href="pricing.html" class="cta secondary">Программа и цены</a>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">Статистика систем</div>
+  <div class="metrics">
+    <div class="metric"><div class="metric-val">64%</div><div class="metric-label">Win Rate (Live)</div></div>
+    <div class="metric"><div class="metric-val">5+</div><div class="metric-label">Ботов в Live</div></div>
+    <div class="metric"><div class="metric-val">150+</div><div class="metric-label">Торговых пар</div></div>
+    <div class="metric"><div class="metric-val">24/7</div><div class="metric-label">Автономная работа</div></div>
+  </div>
+
+  <div class="section-title">Обучение</div>
+  <div class="section-h2">Курс: Инженер автономных систем</div>
+  <div class="course-section">
+    <div class="course-info">
+      <div class="course-result">За 2–3 недели ты запустишь своего торгового бота на реальном рынке — даже если никогда не писал код</div>
+      <p>Никакой рутины. Вместо ручного кодинга — управление через <strong>AI</strong>: ты ставишь задачу на русском языке, система строит бота. Ты архитектор. Бот — исполнитель.</p>
+
+      <div class="course-modules">
+        <div class="course-module">
+          <div class="course-module-num">Модуль 1</div>
+          <div class="course-module-name">Основы и подготовка</div>
+          <div class="course-module-desc">Что такое бот, из чего состоит система, безопасность</div>
+        </div>
+        <div class="course-module">
+          <div class="course-module-num">Модуль 2</div>
+          <div class="course-module-name">Сервер и автоматизация</div>
+          <div class="course-module-desc">Аренда VPS в Европе, SSH, настройка AI-автоматизации</div>
+        </div>
+        <div class="course-module">
+          <div class="course-module-num">Модуль 3</div>
+          <div class="course-module-name">Подключение к бирже</div>
+          <div class="course-module-desc">Binance Testnet API, первый запрос, выбор монет</div>
+        </div>
+        <div class="course-module">
+          <div class="course-module-num">Модуль 4</div>
+          <div class="course-module-name">Архитектура бота</div>
+          <div class="course-module-desc">Три модуля: Слушатель, Аналитик, Исполнитель</div>
+        </div>
+        <div class="course-module">
+          <div class="course-module-num">Модуль 5</div>
+          <div class="course-module-name">Система Анти-слив</div>
+          <div class="course-module-desc">SL/TP/лимиты, бэктест на исторических данных</div>
+        </div>
+        <div class="course-module">
+          <div class="course-module-num">Модуль 6</div>
+          <div class="course-module-name">Тесты в боевых условиях</div>
+          <div class="course-module-desc">Paper Trading на тестнете, анализ и улучшение</div>
+        </div>
+        <div class="course-module">
+          <div class="course-module-num">Модуль 7</div>
+          <div class="course-module-name">Боевой запуск</div>
+          <div class="course-module-desc">Реальные деньги, автозапуск, Telegram-уведомления</div>
+        </div>
+        <div class="course-module">
+          <div class="course-module-num">Модуль 8</div>
+          <div class="course-module-name">Оптимизация</div>
+          <div class="course-module-desc">Трейлинг-стоп, фильтры, веб-панель мониторинга</div>
+        </div>
+        <div class="course-module">
+          <div class="course-module-num">Модуль 9</div>
+          <div class="course-module-name">Масштабирование</div>
+          <div class="course-module-desc">Флот ботов на одном сервере, CLAUDE.md, экономия токенов</div>
+        </div>
+      </div>
+
+      <div class="course-plans">
+        <div class="course-plan featured">
+          <div class="course-plan-name">⭐ Полный курс</div>
+          <div class="course-plan-price">$199</div>
+          <div class="course-plan-desc">Все 9 модулей · Доступ навсегда</div>
+          <ul class="course-plan-features">
+            <li>21 урок с нуля до запуска</li>
+            <li>VPS + автоматизация кодинга</li>
+            <li>Боевой запуск бота</li>
+            <li>Обновления бесплатно</li>
+          </ul>
+        </div>
+        <div class="course-plan">
+          <div class="course-plan-name">С поддержкой</div>
+          <div class="course-plan-price">$249</div>
+          <div class="course-plan-desc">Полный курс + 1 мес Telegram</div>
+          <ul class="course-plan-features">
+            <li>Всё из полного курса</li>
+            <li>Личные ответы на вопросы</li>
+            <li>Ревью твоей системы</li>
+            <li>Помощь с запуском</li>
+          </ul>
+        </div>
+      </div>
+
+      <a href="pricing.html" class="cta" style="background: var(--yellow); color: #0a0f1e; font-size: 17px; padding: 16px 36px;">Смотреть программу и купить →</a>
+    </div>
+  </div>
+
+  <div class="section-title">Проекты</div>
+  <div class="section-h2">Боты в продакшне</div>
+  <div class="bots-grid">
+    <div class="bot-card blue">
+      <div class="bot-icon">⚡</div>
+      <div class="bot-name">NEXUS</div>
+      <div class="bot-type">Multi-Timeframe Momentum</div>
+      <div class="bot-desc">Флагманская система на Binance Futures. Асинхронное исполнение и умные лимитные ордера.</div>
+      <ul class="bot-features">
+        <li>Сигналы H1 + H5</li>
+        <li>Trailing stop логика</li>
+        <li>Real-time аналитика</li>
+      </ul>
+    </div>
+    <div class="bot-card yellow">
+      <div class="bot-icon">🌋</div>
+      <div class="bot-name">Magma v4</div>
+      <div class="bot-type">Trend Following</div>
+      <div class="bot-desc">Трендовая стратегия с динамическим управлением объемом позиции и фильтром шума.</div>
+      <ul class="bot-features">
+        <li>Авто-риск менеджмент</li>
+        <li>Фильтр волатильности</li>
+        <li>Live статистика</li>
+      </ul>
+    </div>
+    <div class="bot-card purple">
+      <div class="bot-icon">◈</div>
+      <div class="bot-name">ECHO</div>
+      <div class="bot-type">Mean Reversion</div>
+      <div class="bot-desc">Возврат к среднему на базе RSI и Bollinger Bands. Оптимизирована под тестнет.</div>
+      <ul class="bot-features">
+        <li>Бектест на 2-х годах</li>
+        <li>Paper trading режим</li>
+        <li>Минимальные просадки</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<div class="section">
+  <div class="section-title">Услуги</div>
+  <div class="section-h2">Индивидуальные решения</div>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">🤖</div>
+      <div class="service-title">Бот под ключ</div>
+      <div class="service-desc">Полная реализация вашей стратегии от идеи до сервера.</div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">📊</div>
+      <div class="service-title">Анализ и Бектест</div>
+      <div class="service-desc">Проверка прибыльности вашей логики на истории рынка.</div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🖥️</div>
+      <div class="service-title">Мониторинг PnL</div>
+      <div class="service-desc">Создание дашбордов для контроля всех сделок в реальном времени.</div>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🔧</div>
+      <div class="service-title">Оптимизация кода</div>
+      <div class="service-desc">Ускорение работы и исправление ошибок в ваших скриптах.</div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">Технологии</div>
+  <div class="section-h2">Наш Стек</div>
+  <div class="stack-grid">
+    <div class="stack-item"><span>⚙️</span>Python 3.12</div>
+    <div class="stack-item"><span>🧠</span>AI (Coding)</div>
+    <div class="stack-item"><span>♊</span>Gemini (Market Analysis)</div>
+    <div class="stack-item"><span>📡</span>ccxt API</div>
+    <div class="stack-item"><span>🌐</span>FastAPI / WebSockets</div>
+    <div class="stack-item"><span>🐳</span>Docker / VPS</div>
+    <div class="stack-item"><span>🔁</span>Asyncio</div>
+    <div class="stack-item"><span>🔐</span>SSL / Security</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">Бесплатная статья</div>
+  <div class="section-h2">Почему чужая стратегия не работает — и как найти свою</div>
+  <div style="background:#111827;border:1px solid #1e2d45;border-left:3px solid #38bdf8;border-radius:0 12px 12px 0;padding:28px 32px;max-width:700px;margin-bottom:32px;">
+    <p style="font-size:16px;color:#cbd5e1;line-height:1.8;margin-bottom:20px;">Рынок работает не так, как объясняют в большинстве курсов. Чужие стратегии умирают как только их узнаёт достаточно людей. Настоящее преимущество — только то, что придумал ты сам и понимаешь почему это работает.</p>
+    <p style="font-size:14px;color:#64748b;margin-bottom:20px;">Простым языком: как устроен рынок, кто на нём играет, почему цена движется — и как найти свою стратегию с нуля.</p>
+    <a href="strategy-guide.html" style="display:inline-flex;align-items:center;gap:8px;background:#38bdf8;color:#0a0f1e;padding:12px 24px;border-radius:8px;font-weight:700;font-size:15px;text-decoration:none;">Читать статью →</a>
+  </div>
+</div>
+
+<div class="section">
+  <div class="contact">
+    <h2>Свяжитесь со мной</h2>
+    <p>Обсудить проект, заказать бота или записаться на обучение можно здесь:</p>
+    <div class="contact-btns">
+      <a href="https://t.me/Alright_thanks" class="btn-tg">✈️ Telegram: @Alright_thanks</a>
+      <a href="mailto:nexus.algo.dev@gmail.com" class="btn-secondary">✉️ nexus.algo.dev@gmail.com</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  © 2026 · NEXUS Crypto Systems · Построено на Python & AI
+</footer>
+
 </body>
 </html>
